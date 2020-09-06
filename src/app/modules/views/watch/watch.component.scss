@@ -1,0 +1,85 @@
+.comments-container{
+    padding-left:1rem ;
+    padding-right: 1rem;
+}
+
+.comment{
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid #0098D8;
+    min-height: 100px;
+    background: #0F171E;
+    border-radius: 5px;
+    outline: none;
+}
+
+.comment-name{
+    color: rgba(242, 244, 246, 0.9);
+    font-weight: bold;
+}
+
+.comment-email{
+    color: #6c757d !important;
+    font-weight: normal !important;
+}
+
+.colored{
+    color:#fff;
+}
+
+.text-secondary{
+    margin-left:2rem;
+    color: #6c757d !important;
+}
+
+.vid-text {
+  margin-top: 15px;
+  color: rgba(242, 244, 246, 0.9);
+}
+
+.vid-text a {
+  color: rgba(242, 244, 246, 0.9);
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.vid-text a:hover {
+  color: #ffffff;
+}
+
+.video-detail-text p {
+  color: rgba(242, 244, 246, 0.9);
+  margin-bottom: 20px;
+  line-height: 1.7em;
+}
+
+.video-detail-text p:last-child {
+  margin-bottom: 0px;
+}
+
+.vid-heading {
+    position: relative;
+}
+
+.vid-heading span {  
+  position: relative;
+  margin: 0px;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: rgba(242, 244, 246, 0.9) !important;
+  border-bottom: 1px solid #6f7378 !important;
+  padding-bottom: 12px;
+  display: inline-block;
+  z-index: 10;
+}
+
+.hding-bottm-line {
+  height: 1px;
+  width: 100%;
+  display: inline-block;
+  background: rgba(242, 244, 246, 0.7) !important;
+  bottom: 0px;
+  left: 0px;
+  position: absolute;
+  z-index: -1;
+}

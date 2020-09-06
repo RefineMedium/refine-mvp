@@ -1,0 +1,202 @@
+<div class="col-12 dashboard">
+  <div class="container pa5">
+    <div class="row">
+      <div class="col-md-6 col-sm-12 col-xs-12 wow fadeInLeft" data-wow-duration="0.8s">
+        <div class="card h-100">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <h2 class="card-header-title">Wallet Information</h2>
+            <div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="mt2 row align-items-center">
+              <div class="col-md-4 mb-1 mb-md-0">Wallet Address :</div>
+              <div class="col-md-8">
+                <a href="https://etherscan.io/address/{{adddress}}" target="_blank">{{adddress}}</a>
+              </div>
+            </div>
+            <hr class="hr-space">
+            <div class="mt3 row align-items-center">
+              <div class="col-md-4 mb-1 mb-md-0">Balance :</div>
+              <div class="col-md-8">{{myBalance}}</div>
+            </div>
+            <hr class="hr-space">
+            <div class="mt3 row align-items-center">
+              <div class="col-md-4 mb-1 mb-md-0">Gas Tracker:</div>
+              <div class="col-md-8">
+                <a href="https://etherscan.io/gastracker" target="_blank">Check Today's Gas Price <i
+                    class="fa fa-dashboard"></i></a>
+              </div>
+            </div>
+            <hr class="hr-space">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-sm-12 col-xs-12 wow fadeInRight" data-wow-duration="0.8s">
+        <div class="card h-100">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <h2 class="card-header-title">Current Gas Settings</h2>
+            <div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="row align-items-center">
+              <div class="col-md-4 mb-1 mb-md-0 mt2">Gas Limit :</div>
+              <div class="col-md-8 pl0">
+                <div class="pr5 input-group w-100">
+                  <input [(ngModel)]="gasLimit" #ctrl="ngModel" type="number" class="form-control"
+                    placeholder="Gas Limit" (keyup)="validateFormField($event.target.value,'1')">
+                  <small *ngIf="isGasPriceErrorVisible" class="text-danger">Required Input</small>
+                </div>
+              </div>
+            </div>
+            <hr class="hr-space">
+            <div class="row align-items-center">
+              <div class="col-md-4 mb-1 mb-md-0 mt2">Gas Price (in Gwei) :</div>
+              <div class="col-md-8 pl0">
+                <div class="pr5 input-group w-100">
+                  <input [(ngModel)]="gwei" #ctrl1="ngModel" type="number" class="form-control" placeholder="Gas Price"
+                    (keyup)="validateFormField($event.target.value,'2')">
+                  <small *ngIf="isGweiErrorVisible" class="text-danger">Required Input</small>
+                </div>
+              </div>
+            </div>
+            <hr class="hr-space">
+            <div class="row align-items-center">
+              <div class="col-md-4 mb-1 mb-md-0 mt2">Update Settings :</div>
+              <div class="col-md-8">
+                <button [disabled]="isGasPriceErrorVisible||isGweiErrorVisible" class="btn btn-success mr5 pull-right"
+                  (click)="updateGasPrice()">Update</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container pa5 pt2">
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="0.8s">
+        <div class="card h-100 mt0">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <div class="row align-items-center">
+              <div class="col-md-12">
+                <button class="btn card-btn" [ngClass]="{'active-btn': isUsersVisible}" (click)="updateTabs('1')">User
+                  Details</button>
+                <button class="btn card-btn" [ngClass]="{'active-btn': isVideosVisible}" (click)="updateTabs('2')">Video
+                  Details</button>
+              </div>
+            </div>
+            <div></div>
+          </div>
+          <div class="card-body" *ngIf="isUsersVisible">
+            <table class="table" cellspacing="0">
+              <thead>
+                <tr>
+                  <th class="text-center">S. No.</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th class="text-center">Videos Uploaded</th>
+                  <th class="text-center">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngIf="usersList.length==0">
+                  <td colspan="5" class="empty-table">No Users</td>
+                </tr>
+                <tr *ngFor="let user of usersList;let idx = index; ">
+                  <td class="text-center">{{idx + 1}}</td>
+                  <td>
+                    <a [routerLink]="['/user-profile']" [queryParams]="{user_id: user.userId}" class="pointer">
+                      {{user.name}}
+                    </a>
+                  </td>
+                  <td>{{user.email}}</td>
+                  <td class="text-center">{{user.videosCount}}</td>
+                  <td class="text-center">
+                    <a [routerLink]="['/user-profile']" [queryParams]="{user_id: user.userId}" class="pointer">
+                      <button class="btn btn-primary mr3">View User Details</button>
+                    </a>
+                    <a (click)="showTransferModal(user.userId)" class="pointer">
+                      <button class="btn btn-primary ml3">Send Tokens</button>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="card-body" *ngIf="isVideosVisible">
+            <table class="table" cellspacing="0">
+              <thead>
+                <tr>
+                  <th class="text-center">S. No.</th>
+                  <th>Title</th>
+                  <th>Uploaded By</th>
+                  <th class="text-center">Total Views</th>
+                  <th class="text-center">Total Likes</th>
+                  <th class="text-center">Total Dislikes</th>
+                  <th class="text-center">Total Comments</th>
+                  <th class="text-center">Watch Video</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngIf="videosList.length==0">
+                  <td colspan="8" class="empty-table">No Videos</td>
+                </tr>
+                <tr *ngFor="let video of videosList;let idx = index;">
+                  <td class="text-center">{{idx + 1}}</td>
+                  <td>{{video.title}}</td>
+                  <td>{{video.uploaded_by}}</td>
+                  <td class="text-center">{{video.views}}</td>
+                  <td class="text-center">{{video.likes}}</td>
+                  <td class="text-center">{{video.dislikes}}</td>
+                  <td class="text-center">{{video.comments}}</td>
+                  <td class="text-center"><a [routerLink]="['/watch']" [queryParams]="{video_id: video.slug}"
+                      class="pointer"><i class="fa fa-eye"></i></a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" *ngIf="showModal || showSuccessModal" (click)="closeModal()"></div>
+<div class="transfer-Modal pa4" *ngIf="showModal">
+  <h4 class="text-center">Transfer Tokens
+    <span class="pull-right">
+      <p class="pointer" (click)="closeModal()"><i class="fa fa-close"></i></p>
+    </span>
+  </h4>
+  <h5 class="pl3 mt3">Current Balance : {{myBalance}}</h5>
+
+  <div class="pl3 pr3 input-group mb-3 w-100">
+    <input type="number" class="form-control mt3" placeholder="Transfer Amount" aria-label="Recipient's username"
+      aria-describedby="basic-addon2" (keyup)="validateAmount($event.target.value)">
+    <small *ngIf="showErrMsg" class="text-danger">Entered value must be between 1 and {{myBalance}}</small>
+  </div>
+  <button [disabled]="showErrMsg" class="mt4 btn btn-primary pull-right" (click)="transferAmount()">TRANSFER</button>
+</div>
+
+<div class="transfer-Modal pa4" *ngIf="showSuccessModal">
+  <h4 class="text-center">Transfer Successful
+    <span class="pull-right">
+      <p class="pointer" (click)="closeSuccessModal()"><i class="fa fa-close"></i></p>
+    </span>
+  </h4>
+  <h5 class="pl3 mt3">Current Balance : {{myBalance}}</h5>
+
+  <div class="pl3 pr3 input-group mb-3 w-100">
+    <p class="pl3 pr3">Amount successfully transferred to the user. The transaction hash is:- <br>
+      <strong><a href="https://etherscan.io/tx/{{transactionHash}}" target="_blank">{{transactionHash}}</a></strong>
+      <br>Please save it for future refrence.
+    </p>
+  </div>
+  <button class="mt4 btn btn-primary pull-right" (click)="closeSuccessModal()">OK</button>
+
+</div>

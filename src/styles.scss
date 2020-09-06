@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~angular-dropdown/styles';
+@import '../src/app/styles/refine-medium.scss';
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    overflow-y: auto;
+
+    p {
+        margin: 0;
+    }
+}

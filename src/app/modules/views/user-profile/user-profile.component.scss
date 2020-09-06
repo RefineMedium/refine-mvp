@@ -1,0 +1,145 @@
+.profile-div {
+    margin-top : 84px;
+}
+
+.row {    
+    word-break: break-all;
+}
+
+.noborder{
+    border-bottom: none;
+}
+
+.col-12 {
+    background-color:#f4f4f4;
+}
+
+.card {
+    margin-top: 20px;
+    box-shadow:0 0.5rem 1.2rem rgba(189,197,209,.2);
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid #e7eaf3;
+    border-radius: .5rem;
+    color: #1e2022 !important;
+    min-height: 210px;
+}
+
+.card-header:first-child {
+    border-radius: calc(.5rem - 1px) calc(.5rem - 1px) 0 0;
+}
+
+.card-header {
+    padding: .75rem;
+    margin-bottom: 0;
+    background-color: #fff;
+    border-bottom: 1px solid #e7eaf3;
+    padding:12px;
+}
+
+.card-header-title {
+    color: #4a4f55;
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    margin-top: 0px;
+    color: #0098d8;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 12px;
+}
+
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid #e7eaf3;
+}
+
+.hr-space {
+    margin-top: .75rem;
+    margin-bottom: .75rem;
+    opacity: .75;
+}
+
+.card-btn {
+    font-size: 1.5rem;
+    margin: 0 10px;
+    border: none;
+    background-color: transparent;
+    padding-top: 0;
+    border-radius: 0;
+}
+
+.active-btn {    
+    color: #0098d8;
+    border-bottom: 1px solid #0098d8;
+    padding-left: 18px;
+    padding-right: 18px;
+}
+
+.card-btn:hover{
+    color: #0098d8;
+    outline: none;
+}
+
+.card-btn:active,.card-btn:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+th {
+    color: #0098d8;
+    background-color: #f8fafd;
+    border-color: #e7eaf3;
+    vertical-align: bottom;
+    border-bottom: 2px solid #e7eaf3;
+}
+
+td {
+    padding: .625rem;
+    vertical-align: top;
+    border-top: 1px solid #e7eaf3;
+}
+
+.empty-table {
+    text-align: center;
+    padding-top: 2em;
+    color: #6c757e;
+    font-weight: bolder;
+}
+
+.transfer-Modal {
+    min-width: 40%;
+    min-height: 200px;
+    position: absolute;
+    border-radius: 10px;
+    background-color: white;
+    color: #212529;
+    z-index: 999;
+    left: 30%;
+    top: 25%;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 150vh;
+    background-color: black;
+    opacity: 0.7;
+    top: 0;
+    z-index: 950;
+}
+
+.w-100{
+    width: 100%;
+}
+
+a {
+    color: #0098d8;
+    cursor: pointer;
+    text-decoration: none;
+}
+

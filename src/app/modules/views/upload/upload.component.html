@@ -1,0 +1,38 @@
+<div id="secondary-section">
+  <div class="container">
+    <div class="row">
+      <div class="vid-heading overflow-hidden">
+        <span class="wow fadeInUp" data-wow-duration="0.8s">Upload</span>
+        <div class="hding-bottm-line wow zoomIn" data-wow-duration="0.8s"></div>
+      </div>
+      <div class="vid-container">
+        <form (ngSubmit)="uploadVideo()">
+          <div class="form-group">
+            <label for="">Video Title <span style="color: red">*</span></label>
+            <input type="text" class="form-control" [(ngModel)]="videoTitle" [ngModelOptions]="{standalone: true}">
+          </div>
+          <div class="form-group">
+            <label for="">Video Description <span style="color: red">*</span></label>
+            <textarea class="form-control" [(ngModel)]="videoDescription" [ngModelOptions]="{standalone: true}"
+              rows="6"></textarea>
+          </div>
+          <div class="form-group">
+            <div class="col-md-6 col-sm-6 pl0">
+              <ngx-dropzone [multiple]="false" [label]="'Drop the video to upload here (or click)'" [accept]="'video/*'"
+                [showPreviews]="true" [preserveFiles]="false" (filesAdded)="onFilesAdded($event)"
+                (filesRejected)="onFilesRejected($event)">
+              </ngx-dropzone>
+            </div>
+            <div class="col-md-6 col-sm-6 pr0">
+              <ngx-dropzone [multiple]="false" [label]="'Drop the video thumbnail to upload here (or click)'"
+                [accept]="'image/*'" [showPreviews]="true" [preserveFiles]="false"
+                (filesAdded)="onThumbnailFilesAdded($event)" (filesRejected)="onFilesRejected($event)">
+              </ngx-dropzone>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary upload-btn mt4" [disabled]="!validateForm()">Upload</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

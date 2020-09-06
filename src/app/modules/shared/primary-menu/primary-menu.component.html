@@ -1,0 +1,190 @@
+<!-- Social Icons -->
+<div class="icon-bar">
+  <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+  <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+  <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+  <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+  <a href="#" class="youtube"><i class="fa fa-youtube"></i></a>
+  <a href="#" class="reddit"><i class="fa fa-reddit-alien"></i></a>
+  <a href="#" class="medium"><i class="fa fa-medium"></i></a>
+</div>
+
+<!-- Main Navigation -->
+<div id="navigation-w-search">
+  <div id="main-navigation" class="nav-v2">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3 col-sm-3 col-xs-3">
+          <div class="logo">
+            <a [routerLink]="['/']">
+              <img class="img-responsive" src="assets/images/logo.png" alt="Logo">
+            </a>
+          </div>
+        </div>
+        <div class="col-md-9 col-sm-9 col-xs-9 pl0 pr0">
+          <div id="cssmenu" class="cssmenu-v2">
+            <ul class="nav-list">
+              <li routerLinkActive="active" class="pointer">
+                <a [routerLink]="['/browse']"><i class="fi ion-ios-film"></i>Browse</a>
+              </li>
+              <!-- <li routerLinkActive="active" class="pointer">
+                <a (click)="showComingSoonModal()"><i class="fi ion-ios-film-outline"></i>Video Styles</a></li>
+              <li routerLinkActive="active" class="pointer">
+                <a (click)="showComingSoonModal()"><i class="fi ion-android-apps"></i>Category</a></li>
+              <li routerLinkActive="active" class="pointer">
+                <a (click)="showComingSoonModal()"><i class="fi ion-compose"></i>Blog</a></li>
+              <li routerLinkActive="active" class="pointer">
+                <a (click)="showComingSoonModal()"><i class="fi ion-android-desktop"></i>Tv</a></li> 
+              <li routerLinkActive="active" class="pointer">
+                <a [routerLink]="['/about']"><i class="fi ion-person"></i>About</a></li> -->
+              <li *ngIf="user_authorized" routerLinkActive="active" class="pointer">
+                <a [routerLink]="['/upload']"><i class="fa fa-arrow-up"></i>Upload</a></li>
+              <li *ngIf="user_authorized" routerLinkActive="active" class="pointer">
+                <a (click)="showInviteModal()"><i class="fa fa-users"></i>Invite Friend</a></li>
+              <li *ngIf="user_authorized && isAdmin" routerLinkActive="active" class="pointer">
+                <a [routerLink]="['/dashboard']"><i class="fa fa-dashboard "></i>Dashboard</a></li>
+              <li *ngIf="user_authorized" routerLinkActive="active" class="pointer">
+                <a [routerLink]="['/profile']"><i class="fa fa-user"></i>Profile</a></li>
+              <li *ngIf="user_authorized" class="pointer" (click)="logout()">
+                <a><i class="fa fa-sign-out"></i>Logout</a>
+              </li>
+              <li *ngIf="!user_authorized" class="pointer login-toggle" (click)=" loginClick()">
+                <a><i class="fa fa-sign-in"></i>Login</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <form id="search-form" (ngSubmit)="searchVideos()">
+          <div class="form-group search-group">
+            <input type="text" name="search" id="search-field" class="form-control" required placeholder="Search Videos"
+              [(ngModel)]="searchQuery">
+            <button type="submit" class="search-icon"><i class="fa fa-search"></i></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="login-box">
+  <i class="fa fa-remove login-toggle v2-bg" (click)="closeLogin()"></i>
+  <div [hidden]="isLogin">
+    <form class="user-form login-form form-active text-center">
+      <h1 class="form-heading">Log in to your account</h1>
+      <button value="loginM" class="btn btn-block btn-login v2-bg text-uppercase" (click)="comingSoon()">
+        Login As Moderator
+      </button>
+      <button value="loginI" class="btn btn-block btn-login v2-bg text-uppercase" (click)="comingSoon()">
+        Login As Investor
+      </button>
+      <button value="login" class="btn btn-block btn-login v2-bg text-uppercase" (click)="enableLogin()">
+        Login As User
+      </button>
+    </form>
+  </div>
+  <div [hidden]="!isLogin">
+    <!-- Login from -->
+    <form class="user-form login-form form-active text-center">
+      <h1 class="form-heading">Log in to your account</h1>
+      <div class="form-group">
+        <input type="email" name="email" class="form-control" id="login-email" required [(ngModel)]="form.email"
+          placeholder="Email Address">
+        <i class="fa fa-envelope input-icon"></i>
+      </div>
+      <div class="form-group">
+        <input type="password" name="password" class="form-control" id="login-password" required
+          [(ngModel)]="form.password" placeholder="Password">
+        <i class="fa fa-key input-icon"></i>
+      </div>
+      <label for="rememberme">Remember Me</label>
+      <input type="checkbox" class="ml3 form-check-input" id="rememberme" name="rememberMe"
+        [(ngModel)]="form.rememberMe" />
+      <button type="submit" value="login" class="btn btn-block btn-login v2-bg text-uppercase" (click)="login()">
+        Login
+      </button>
+      <div [(ngClass)]="errorClasses" [innerHTML]="errorMessage" style="color:red;font-size: 11px;">
+      </div>
+      <p class="forgot-password">
+        Forgot your password? <a [routerLink]="['/forgot']">Click here</a>
+      </p>
+      <p class="no-account">
+        Don't have an account yet? <a id="signUp-frm-button" href="#" (click)="reset()">Sign Up</a>
+      </p>
+    </form>
+  </div>
+  <!-- SignUp form -->
+  <form class="user-form signUp-form text-center">
+    <h1 class="form-heading">Sign Up</h1>
+    <div class="form-group">
+      <input type="text" name="username" class="form-control" id="signUp-username" required
+        [(ngModel)]="signupForm.username" placeholder="Name">
+      <i class="fa fa-envelope input-icon"></i>
+    </div>
+    <div class="form-group">
+      <input type="email" name="email" class="form-control" id="signUp-email" required [(ngModel)]="signupForm.email"
+        placeholder="Email Address">
+      <i class="fa fa-envelope input-icon"></i>
+    </div>
+    <div class="form-group">
+      <input type="password" name="password" class="form-control" id="signUp-password" required
+        [(ngModel)]="signupForm.password" placeholder="Password">
+      <i class="fa fa-key input-icon"></i>
+    </div>
+    <div class="form-group">
+      <input type="password" name="password" class="form-control" id="signUp-confrm-password" required
+        [(ngModel)]="signupForm.confirm_password" placeholder="Confirm Password">
+      <i class="fa fa-key input-icon"></i>
+    </div>
+    <div class="form-group">
+      <input type="text" name="referral" class="form-control" id="signUp-referral" [(ngModel)]="signupForm.referral"
+        placeholder="Referral Code">
+      <i class="fa fa-share input-icon"></i>
+    </div>
+
+    <recaptcha [(ngModel)]="recaptchaResult" (scriptLoad)="onScriptLoad()" (scriptError)="onScriptError()"
+      name="recaptcha"></recaptcha>
+    <button type="submit" value="login" class="btn btn-block btn-login v2-bg text-uppercase" (click)="signup()">
+      Sign Up
+    </button>
+    <div [(ngClass)]="errorClasses" [innerHTML]="errorMessage" style="color:red;font-size: 11px;">
+    </div>
+    <p class="no-account">
+      You have an account already? <a id="login-frm-button" href="#" (click)="reset()">Login</a>
+    </p>
+  </form>
+</div>
+
+<div class="overlay" *ngIf="showModal || showSuccessModal" (click)="closeModal()"></div>
+<div class="transfer-Modal pa4" *ngIf="showModal">
+  <h4 class="text-center">Invite User
+    <span class="pull-right">
+      <p class="pointer" (click)="closeModal()"><i class="fa fa-close"></i></p>
+    </span>
+  </h4>
+  <div class="pl3 pr3 input-group mb-3 w-100">
+    <input type="email" class="form-control mt3" placeholder="Email Address"
+      (keyup)="validateEmail($event.target.value)">
+    <small *ngIf="showErrMsg" class="text-danger">Required Field</small>
+  </div>
+  <button [disabled]="showErrMsg" class="mt4 btn btn-primary pull-right" (click)="inviteUser()">INVITE</button>
+</div>
+
+<div class="transfer-Modal pa4" *ngIf="showSuccessModal">
+  <h4 class="text-center">Coming Soon!!
+    <span class="pull-right">
+      <p class="pointer" (click)="closeSuccessModal()"><i class="fa fa-close"></i></p>
+    </span>
+  </h4>
+  <div class="pl3 pr3 input-group mb3 mt4 w-100">
+    <h5 class="pl3 pr3 blue-txt" (click)="closeSuccessModal()">
+      This feature is under development and Coming Soon!
+    </h5>
+  </div>
+  <button class="mt4 btn btn-primary pull-right" (click)="closeSuccessModal()">OK</button>
+</div>

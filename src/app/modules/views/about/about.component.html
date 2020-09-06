@@ -1,0 +1,23 @@
+<div class="container">
+  <h2 class="text-center wow slideInLeft" data-wow-duration="1s">Meet Our Team</h2>
+  <p class="text-center wow slideInLeft" data-wow-duration="1s">Our team brings a wealth of experience from the most
+    diverse sources.</p>
+  <p class="text-center wow slideInLeft" data-wow-duration="1s">We strive to create an environment where members have
+    the freedom to articulate their ideas and emotions.</p>
+
+  <div class="row mt4">
+
+    <div class="col-lg-3 col-md-3 col-sm-3 wow fadeInUp" data-wow-duration="1s" *ngFor="let member of team">
+      <a href="{{member.profile}}" target="_blank">
+        <div class="progiBx"> <img src="{{member.image}}" alt="Unable to Load Image" width="350px" height="270px">
+          <h6>{{member.name}}</h6>
+          <!--<div class="linkD"><a href="#"><img src="images/linkedin.png" alt=""></a></div>-->
+        </div>
+      </a>
+    </div>
+
+    <div class="clearfix"></div>
+  </div>
+
+
+</div>

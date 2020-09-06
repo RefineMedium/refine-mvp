@@ -1,0 +1,437 @@
+<!-- Main Navigation -->
+<div id="wrapper">
+  <block-ui>
+    <app-primary-menu></app-primary-menu>
+    <router-outlet></router-outlet>
+
+    <!-- Footer -->
+    <app-footer></app-footer>
+    <notifier-container></notifier-container>
+  </block-ui>
+</div>
+
+<!-- Main Section -->
+
+<!-- <div id="main-section" class="main-v2">
+  <div class="container-fluid">
+    <div class="row overflow-hidden">
+      <div class="col-sm-12">
+
+        <owl-carousel-o [options]="carouselProperties"> -->
+<!-- <ng-template carouselSlide *ngFor="let carouselVideoWithId of carouselVideosWithId">
+            <div class="vid-img-holder wow fadeInUp" data-wow-duration="0.5s">
+              <div class="top-shadow">
+
+              </div>
+              <a [routerLink]="['/watch']" [queryParams]="{video_id: carouselVideoWithId.id}">
+                <img class="img-responsive" [src]="carouselVideoWithId.video.thumbnail" alt="video_img">
+                <span class="play-icon play-md-icon">
+                  <img class="img-responsive play-svg svg" src="assets/images/play-button.svg" alt="play"
+                    onerror="this.src='assets/images/play-button.png'">
+                </span>
+              </a>
+              <h3 class="vid-author">
+                <span>
+                  By <a [routerLink]="['/search']" [queryParams]="{query: carouselVideoWithId.video.owner}"
+                    title="Posts by admin" rel="author">{{carouselVideoWithId.video.owner}}</a>
+                </span>
+                <a [routerLink]="['/watch']" [queryParams]="{video_id: carouselVideoWithId.id}">
+                  {{carouselVideoWithId.video.Title}}
+                </a>
+              </h3>
+              <div class="bottom-shadow"></div>
+              <div class="overlay-div"></div>
+            </div>
+          </ng-template> -->
+
+<!-- <ng-template carouselSlide>
+            <div class="vid-img-holder wow fadeInUp" data-wow-duration="0.5s">
+              <div class="top-shadow">
+
+              </div>
+              <a href="video-detail.html">
+                <img class="img-responsive" src="assets/images/vid-carousel-img-1.jpg" alt="video_img">
+                <span class="play-icon play-md-icon">
+                  <img class="img-responsive play-svg svg" src="assets/images/play-button.svg" alt="play"
+                    onerror="this.src='assets/images/play-button.png'">
+                </span>
+              </a>
+              <h3 class="vid-author">
+                <span>
+                  By <a href="#" title="Posts by admin" rel="author">admin</a>
+                </span>
+                <a href="video-detail.html">
+                  Fly Mask Video (2016)
+                </a>
+              </h3>
+              <div class="bottom-shadow"></div>
+              <div class="overlay-div"></div>
+            </div>
+          </ng-template>
+          <ng-template carouselSlide>
+            <div class="vid-img-holder wow fadeInUp" data-wow-duration="0.5s">
+              <div class="top-shadow">
+
+              </div>
+              <a href="video-detail.html">
+                <img class="img-responsive" src="assets/images/vid-carousel-img-2.jpg" alt="video_img">
+                <span class="play-icon play-md-icon">
+                  <img class="img-responsive play-svg svg" src="assets/images/play-button.svg" alt="play"
+                    onerror="this.src='assets/images/play-button.png'">
+                </span>
+              </a>
+              <h3 class="vid-author">
+                <span>
+                  By <a href="#" title="Posts by admin" rel="author">admin</a>
+                </span>
+                <a href="video-detail.html">
+                  War Video Compilation
+                </a>
+              </h3>
+              <div class="bottom-shadow"></div>
+              <div class="overlay-div"></div>
+            </div>
+          </ng-template>
+          <ng-template carouselSlide>
+            <div class="vid-img-holder wow fadeInUp" data-wow-duration="0.5s">
+              <div class="top-shadow">
+
+              </div>
+              <a href="video-detail.html">
+                <img class="img-responsive" src="assets/images/vid-carousel-img-3.jpg" alt="video_img">
+                <span class="play-icon play-md-icon">
+                  <img class="img-responsive play-svg svg" src="assets/images/play-button.svg" alt="play"
+                    onerror="this.src='images/play-button.png'">
+                </span>
+              </a>
+              <h3 class="vid-author">
+                <span>
+                  By <a href="#" title="Posts by admin" rel="author">admin</a>
+                </span>
+                <a href="video-detail.html">
+                  Super Hero Of Kids
+                </a>
+              </h3>
+              <div class="bottom-shadow"></div>
+              <div class="overlay-div"></div>
+            </div>
+          </ng-template>
+        </owl-carousel-o>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- Main Section -->
+
+<!-- Secondary Section -->
+<!-- 
+<div id="secondary-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9 col-sm-8">
+        <div class="latst-vid secondary-vid">
+          <div class="vid-heading overflow-hidden">
+            <span class="wow fadeInUp" data-wow-duration="0.8s">Latest videos</span>
+            <div class="hding-bottm-line wow zoomIn" data-wow-duration="0.8s"></div>
+          </div>
+          <div class="row auto-clear">
+            <div class="vid-container">
+              <div class="col-md-4 col-sm-6" *ngFor="let video of latestVideos">
+                <div class="latest-vid-img-container">
+                  <div class="vid-img">
+                    <img class="img-responsive" [src]="video.thumbnail" alt="video image">
+                    <a [routerLink]="['/watch']" [queryParams]="{video_id: video.slug}"
+                      class="play-icon play-small-icon">
+                      <img class="img-responsive play-svg svg" src="assets/images/play-button.svg" alt="play"
+                        onerror="this.src='assets/images/play-button.png'">
+                    </a>
+                    <div class="overlay-div"></div>
+                  </div>
+                  <div class="vid-text">
+                    <p><span>By </span> <a [routerLink]="['/search']"
+                        [queryParams]="{query: video.owner}">{{video.owner}}</a></p>
+                    <h1><a [routerLink]="['/watch']" [queryParams]="{video_id: video.slug}">{{video.Title}}</a></h1>
+                    <p class="vid-info-text">
+                      <span *ngIf="video.timestamp">{{video.timestamp | date :'short'}}</span>
+                      <span *ngIf="video.timestamp"> &#47; </span>
+
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="latest-vid-img-container">
+                  <div class="vid-img">
+                    <img class="img-responsive" src="assets/images/latest-vid-img-2.jpg" alt="video image">
+                    <a href="video-detail.html" class="play-icon play-small-icon">
+                      <img class="img-responsive play-svg svg" src="assets/images/play-button.svg" alt="play"
+                        onerror="this.src='assets/images/play-button.png'">
+                    </a>
+                    <div class="overlay-div"></div>
+                  </div>
+                  <div class="vid-text">
+                    <p><span>By</span> <a href="#">Jhon Doe</a></p>
+                    <h1><a href="video-detail.html">World Traveling Couple (2015)</a></h1>
+                    <p class="vid-info-text">
+
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="latest-vid-img-container">
+                  <div class="vid-img">
+                    <img class="img-responsive" src="assets/images/latest-vid-img-3.jpg" alt="video image">
+                    <a href="video-detail.html" class="play-icon play-small-icon">
+                      <img class="img-responsive play-svg svg" src="assets/images/play-button.svg" alt="play"
+                        onerror="this.src='assets/images/play-button.png'">
+                    </a>
+                    <div class="overlay-div"></div>
+                  </div>
+                  <div class="vid-text">
+                    <p><span>By</span> <a href="#">Jhon Doe</a></p>
+                    <h1><a href="video-detail.html">Couples Love latest video</a></h1>
+                    <p class="vid-info-text">
+
+
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="latest-vid-img-container">
+                  <div class="vid-img">
+                    <img class="img-responsive" src="assets/images/latest-vid-img-4.jpg" alt="video image">
+                    <a href="video-detail.html" class="play-icon play-small-icon">
+                      <img class="img-responsive play-svg svg" src="assets/images/play-button.svg" alt="play"
+                        onerror="this.src='assets/images/play-button.png'">
+                    </a>
+                    <div class="overlay-div"></div>
+                  </div>
+                  <div class="vid-text">
+                    <p><span>By</span> <a href="#">Jhon Doe</a></p>
+                    <h1><a href="video-detail.html">Alien Abduction Full Movie</a></h1>
+                    <p class="vid-info-text">
+
+
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="latest-vid-img-container">
+                  <div class="vid-img">
+                    <img class="img-responsive" src="assets/images/latest-vid-img-5.jpg" alt="video image">
+                    <a href="video-detail.html" class="play-icon play-small-icon">
+                      <img class="img-responsive play-svg svg" src="assets/images/play-button.svg" alt="play"
+                        onerror="this.src='assets/images/play-button.png'">
+                    </a>
+                    <div class="overlay-div"></div>
+                  </div>
+                  <div class="vid-text">
+                    <p><span>By</span> <a href="#">Jhon Doe</a></p>
+                    <h1><a href="video-detail.html">Sunset Running - Health Corner</a></h1>
+                    <p class="vid-info-text">
+
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="latest-vid-img-container">
+                  <div class="vid-img">
+                    <img class="img-responsive" src="assets/images/latest-vid-img-6.jpg" alt="video image">
+                    <a href="video-detail.html" class="play-icon play-small-icon">
+                      <img class="img-responsive play-svg svg" src="assets/images/play-button.svg" alt="play"
+                        onerror="this.src='assets/images/play-button.png'">
+                    </a>
+                    <div class="overlay-div"></div>
+                  </div>
+                  <div class="vid-text">
+                    <p><span>By</span> <a href="#">Jhon Doe</a></p>
+                    <h1><a href="video-detail.html">Zombie Full Movie (1979)</a></h1>
+                    <p class="vid-info-text">
+
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="latest-vid-img-container">
+                  <div class="vid-img">
+                    <img class="img-responsive" src="assets/images/latest-vid-img-7.jpg" alt="video image">
+                    <a href="video-detail.html" class="play-icon play-small-icon">
+                      <img class="img-responsive play-svg svg" src="assets/images/play-button.svg" alt="play"
+                        onerror="this.src='assets/images/play-button.png'">
+                    </a>
+                    <div class="overlay-div"></div>
+                  </div>
+                  <div class="vid-text">
+                    <p><span>By</span> <a href="#">Jhon Doe</a></p>
+                    <h1><a href="video-detail.html">Latest Dancing Videos</a></h1>
+                    <p class="vid-info-text">
+
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="latest-vid-img-container">
+                  <div class="vid-img">
+                    <img class="img-responsive" src="assets/images/latest-vid-img-8.jpg" alt="video image">
+                    <a href="video-detail.html" class="play-icon play-small-icon">
+                      <img class="img-responsive play-svg svg" src="assets/images/play-button.svg" alt="play"
+                        onerror="this.src='assets/images/play-button.png'">
+                    </a>
+                    <div class="overlay-div"></div>
+                  </div>
+                  <div class="vid-text">
+                    <p><span>By</span> <a href="#">Jhon Doe</a></p>
+                    <h1><a href="video-detail.html">Horror Video Pack 1</a></h1>
+                    <p class="vid-info-text">
+
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="latest-vid-img-container">
+                  <div class="vid-img">
+                    <img class="img-responsive" src="assets/images/latest-vid-img-9.jpg" alt="video image">
+                    <a href="video-detail.html" class="play-icon play-small-icon">
+                      <img class="img-responsive play-svg svg" src="assets/images/play-button.svg" alt="play"
+                        onerror="this.src='assets/images/play-button.png'">
+                    </a>
+                    <div class="overlay-div"></div>
+                  </div>
+                  <div class="vid-text">
+                    <p><span>By</span> <a href="#">Jhon Doe</a></p>
+                    <h1><a href="video-detail.html">Star Wars: The Force Awakens</a></h1>
+                    <p class="vid-info-text">
+
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="col-md-3 col-sm-4">
+        <div class="sidebar">
+          <div class="overlaysection">
+            <div class="sidebar-vid most-liked">
+              <h1 class="sidebar-heading">Most Liked <br>(Coming Soon)</h1>
+              <div class="media">
+                <div class="media-left">
+                  <img src="assets/images/most-liked-img-s1.jpg" alt="video">
+                </div>
+                <div class="media-body">
+                  <h1><a (click)="comingSoon()">Journey</a></h1>
+                </div>
+              </div>
+              <div class="media">
+                <div class="media-left">
+                  <img src="assets/images/most-liked-img-s2.jpg" alt="video">
+                </div>
+                <div class="media-body">
+                  <h1><a (click)="comingSoon()">Magic</a></h1>
+
+                </div>
+              </div>
+              <div class="media">
+                <div class="media-left">
+                  <img src="assets/images/most-liked-img-s3.jpg" alt="video">
+                </div>
+                <div class="media-body">
+                  <h1><a (click)="comingSoon()">Runner</a></h1>
+
+                </div>
+              </div>
+              <div class="media">
+                <div class="media-left">
+                  <img src="assets/images/most-liked-img-s4.jpg" alt="video">
+                </div>
+                <div class="media-body">
+                  <h1><a (click)="comingSoon()">Fantasy</a></h1>
+
+                </div>
+              </div>
+            </div>
+          </div>
+           <div class="sidebar-vid most-viewd">
+            <h1 class="sidebar-heading">Most Viewed</h1>
+            <div class="most-viewd-container">
+              <div class="most-viewd-img">
+                <img class="img-responsive" src="assets/images/most-viewd-1.jpg" alt="video">
+              </div>
+              <div class="most-viewd-text">
+                <h1><a href="video-detail.html">Human Rights Violation</a></h1>
+                <p>
+                  <span><i class="fa fa-comment"></i> 10</span>
+                  <span><i class="fa fa-eye"></i> 534</span>
+                </p>
+              </div>
+            </div>
+            <div class="most-viewd-container">
+              <div class="most-viewd-img">
+                <img class="img-responsive" src="assets/images/most-viewd-2.jpg" alt="video">
+              </div>
+              <div class="most-viewd-text">
+                <h1><a href="video-detail.html">War Video Compilation</a></h1>
+                <p>
+                  <span><i class="fa fa-comment"></i> 10</span>
+                  <span><i class="fa fa-eye"></i> 534</span>
+                </p>
+              </div>
+            </div>
+          </div> -->
+<!-- <div class="tags">
+  <h1 class="sidebar-heading">Tags (Coming Soon)</h1>
+  <ul class="list-inline list-unstyled">
+    <li><a href="#">3D</a></li>
+    <li><a href="#">Animals &amp; Birds</a></li>
+    <li><a href="#">HD</a></li>
+    <li><a href="#">Horror</a></li>
+    <li><a href="#">Art</a></li>
+    <li><a href="#">Self</a></li>
+    <li><a href="#">HD Songs</a></li>
+    <li><a href="#">Comedy</a></li>
+  </ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>  -->
+
+<!-- <script type="text/javascript">
+  $().ready(function () {
+    $('.send-form').validate({
+      submitHandler: function () {
+        var curForm = $('.send-form');
+        $("<div />").addClass("formOverlay").appendTo(curForm);
+
+        $.ajax({
+          url: 'mail.php',
+          type: 'POST',
+          data: curForm.serialize(),
+          success: function (data) {
+            var res = data.split("::");
+            curForm.find("div.formOverlay").remove();
+            curForm.prev('.expMessage').html(res[1]);
+            if (res[0] == 'Success') {
+              curForm.remove();
+              curForm.prev('.expMessage').html('');
+            }
+          }
+        });
+        return false;
+      }
+    })
+  })
+
+</script> -->

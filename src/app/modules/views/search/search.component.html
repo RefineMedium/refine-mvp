@@ -1,0 +1,45 @@
+<div id="secondary-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9 col-sm-8">
+        <div class="latst-vid secondary-vid">
+          <div class="vid-heading overflow-hidden">
+            <span class="wow fadeInUp" data-wow-duration="0.8s">Search Results</span>
+            <div class="hding-bottm-line wow zoomIn" data-wow-duration="0.8s"></div>
+          </div>
+          <div class="row auto-clear">
+            <div class="vid-container">
+              <div class="col-md-4 col-sm-6" *ngFor="let videoWithId of videosWithId">
+                <div class="latest-vid-img-container">
+                  <div class="vid-img">
+                    <img class="img-responsive" [src]="videoWithId.video.thumbnail" alt="video image">
+                    <a [routerLink]="['/watch']" [queryParams]="{video_id: videoWithId.id}"
+                      class="play-icon play-small-icon">
+                      <img class="img-responsive play-svg svg" src="assets/images/play-button.svg" alt="play"
+                        onerror="this.src='assets/images/play-button.png'">
+                    </a>
+                    <div class="overlay-div"></div>
+                  </div>
+                  <div class="vid-text">
+                    <p><span>By </span> <a href="#">{{videoWithId.video.owner}}</a></p>
+                    <h1><a [routerLink]="['/watch']"
+                        [queryParams]="{video_id: videoWithId.id}">{{videoWithId.video.Title}}</a></h1>
+                    <p class="vid-info-text">
+                      <span
+                        *ngIf="videoWithId.video.timestamp">{{videoWithId.video.timestamp.seconds * 1000 | date :'short'}}</span>
+                      <span *ngIf="videoWithId.video.timestamp"> &#47; </span>
+                      
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6" *ngIf="videosWithId.length === 0">
+                <p>No videos found for the given search query.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

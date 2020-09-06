@@ -1,0 +1,83 @@
+
+.vid-text {
+  margin-top: 15px;
+  color: rgba(242, 244, 246, 0.9);
+}
+
+.vid-text a {
+  color: rgba(242, 244, 246, 0.9);
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.vid-text a:hover {
+  color: #ffffff;
+}
+
+.vid-text h1 {
+  margin: 0px;
+  font-size: 0px;
+  margin-bottom: 3px;
+}
+
+.vid-text h1 a {
+  font-family: 'Montserrat';
+  text-decoration: none;
+  display: inline-block;
+  color: rgba(242, 244, 246, 0.9);
+  font-size: 14px;
+  line-height: 1.2em;
+  margin: 0px 0px 0px;
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.vid-text p.vid-info-text {
+  color: rgba(242, 244, 246, 0.9);
+  margin-bottom: 0px;
+}
+
+.vid-text p i.fa {
+  color: rgba(242, 244, 246, 0.9);
+  transition: all 0.3s ease 0s;
+}
+
+.vid-text p i.fa:hover {
+  color: #ffffff;
+}
+
+.vid-heading {
+    position: relative;
+}
+
+.vid-heading span {  
+  position: relative;
+  margin: 0px;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: rgba(242, 244, 246, 0.9) !important;
+  border-bottom: 1px solid #6f7378 !important;
+  padding-bottom: 12px;
+  display: inline-block;
+  z-index: 10;
+}
+
+.hding-bottm-line {
+  height: 1px;
+  width: 100%;
+  display: inline-block;
+  background: rgba(242, 244, 246, 0.7) !important;
+  bottom: 0px;
+  left: 0px;
+  position: absolute;
+  z-index: -1;
+}
+
+.vid-img-holder:hover .play-icon,
+.latest-vid-img-container:hover .play-icon,
+.bottom-vid-img-container .bottom-vid:hover .play-icon {
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+}

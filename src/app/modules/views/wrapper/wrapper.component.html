@@ -1,0 +1,325 @@
+<block-ui>
+  <div id="wrapper">
+    <div id="main-content">
+      <!-- Main Bar-->
+      <!-- <div id="main-bar" class="main-bar-v2">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-sm-2 col-xs-12">
+              <div class="logo">
+                <a [routerLink]="['/']">
+                  <img class="img-responsive" src="assets/images/logo.png" alt="Logo">
+                </a>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12 pull-right">
+              <div style="display: flex;">
+                <button type="button" class="btn btn-default btn-create-album btn-blue" routerLink='/upload'>
+                  Upload Video </button>
+                <div [hidden]="!user_authorized" ngDropdown class="ml-3">
+                  <button ngDropdownControl class="btn btn-primary btn-blue" type="button" id="dropdownMenuButton">
+                    {{username}}
+                  </button>
+                  <div ngDropdownContent dropdownClass="slide-fade">
+                    <ul class="list-unstyled">
+                      <li><button class="btn" (click)="logout()">Log out</button></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="login login-v2 pull-right ml-3 login-btn" [hidden]="user_authorized" style="padding: 0;">
+                  <a class="login-toggle btn btn-primary btn-blue" href="#"> Login/Register</a>
+                </div>
+              </div>
+              <div [hidden]="!user_authorized" class="p-4 pull-right">
+                <p class="wallet">Current Balance&nbsp;:&nbsp;{{wallet_balance}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- Main Bar -->
+
+      <!-- Main Navigation -->
+
+      <!-- <div id="navigation-w-search">
+        <div id="main-navigation" class="nav-v2">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-8 col-sm-12 col-xs-12 for-drop-search">
+                <div id="cssmenu" class="cssmenu-v2">
+                  <ul>
+                    <li class="active"><a [routerLink]="['/']"><i class="fi ion-ios-home"></i>Home</a>
+                    </li>
+                    <li><a (click)="comingSoon()"><i class="fi ion-ios-film-outline"></i>Video Styles</a>
+                    </li>
+                    <li><a (click)="comingSoon()"><i class="fi ion-android-apps"></i>Category</a>
+                    </li>
+                    <li><a (click)="comingSoon()"><i class="fi ion-compose"></i>Blog</a>
+                    </li>
+                    <li><a (click)="comingSoon()"><i class="fi ion-android-desktop"></i>Tv</a></li>
+                    <li><a [routerLink]="['/about']"><i class="fi ion-person"></i>About</a></li>
+                    <div [hidden]="!user_authorized">
+                      <button *ngIf="isAddress != true" class="btn btn-default btn-create-album btn-white"
+                        (click)="setAddress()">Set Address</button>
+                    </div>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-12 col-xs-11">
+                <div id="social-v2" class="social-icon">
+                  <ul class="list-inline list-unstyled">
+                    <li><a href="https://www.facebook.com/refinemedium/" target="_blank"><i
+                          class="fa fa-facebook"></i></a></li>
+                    <li><a href="https://twitter.com/RefineMedium" target="_blank"><i class="fa fa-twitter"></i></a>
+                    </li>
+                    <li><a href="https://www.instagram.com/refine.medium/" target="_blank"><i
+                          class="fa fa-instagram"></i></a></li>
+                    <li><a href="https://www.linkedin.com/company/refinemedium/" target="_blank"><i
+                          class="fa fa-linkedin"></i></a></li>
+                    <li><a href="https://www.youtube.com/channel/UCjkVHV4ifQGushiquG70r_g" target="_blank"><i
+                          class="fa fa-youtube"></i></a></li>
+                    <li><a href="https://old.reddit.com/r/RefineMedium/" target="_blank"><i
+                          class="fa fa-reddit"></i></a></li>
+                    <li><a href="https://medium.com/@refineupdate" target="_blank"><i class="fa fa-medium"></i></a></li>
+                    <li *ngIf="user_authorized" (click)="inviteUser()"><a href="#"><i
+                          class="fa fa-share-alt-square"></i></a></li>
+                  </ul>
+                </div>
+                <div class="srch-button">
+                  <button type="button" class="btn btn-search-drop"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <form id="search-form" (ngSubmit)="searchVideos()">
+                <div class="form-group search-group">
+                  <input type="text" name="search" id="search-field" class="form-control" required
+                    placeholder="Search Videos" [(ngModel)]="searchQuery">
+                  <button type="submit" class="search-icon"><i class="fa fa-search"></i></button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <router-outlet></router-outlet> -->
+
+      <!-- <div id="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3 col-sm-6">
+              <div class="footer-about wow fadeIn" data-wow-duration="0.5s">
+                <div class="vid-heading">
+                  <span>About</span>
+                  <div class="hding-bottm-line"></div>
+                </div>
+                <img class="img-responsive" src="assets/images/logo.png" alt="Logo">
+
+                <ul class="bottom-social list-inline list-unstyled">
+                  <li><a href="https://www.facebook.com/refinemedium/" target="_blank"><i
+                        class="fa fa-facebook"></i></a></li>
+                  <li><a href="https://twitter.com/RefineMedium" target="_blank"><i class="fa fa-twitter"></i></a>
+                  </li>
+                  <li><a href="https://www.instagram.com/refine.medium/" target="_blank"><i
+                        class="fa fa-instagram"></i></a></li>
+                  <li><a href="https://www.linkedin.com/company/refinemedium/" target="_blank"><i
+                        class="fa fa-linkedin"></i></a></li>
+                  <li><a href="https://www.youtube.com/channel/UCjkVHV4ifQGushiquG70r_g" target="_blank"><i
+                        class="fa fa-youtube"></i></a></li>
+                  <li><a href="https://old.reddit.com/r/RefineMedium/" target="_blank"><i class="fa fa-reddit"></i></a>
+                  </li>
+                  <li><a href="https://medium.com/@refineupdate" target="_blank"><i class="fa fa-medium"></i></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="bottom-post wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.2s">
+                <div class="vid-heading">
+                  <span>Latest Posts</span>
+                  <div class="hding-bottm-line"></div>
+                </div>
+                <div class="latest-post">
+                  <div class="media">
+                    <div class="media-left">
+                      <img src="assets/images/most-like-img-1.jpg" alt="video">
+                    </div>
+                    <div class="media-body">
+                      <h1><a href="blog-detail.html">Stalker Game</a></h1>
+
+                    </div>
+                  </div>
+                  <div class="media">
+                    <div class="media-left">
+                      <img src="assets/images/most-like-img-2.jpg" alt="video">
+                    </div>
+                    <div class="media-body">
+                      <h1><a href="blog-detail.html">Martial Art</a></h1>
+
+                    </div>
+                  </div>
+                  <div class="media">
+                    <div class="media-left">
+                      <img src="assets/images/most-like-img-3.jpg" alt="video">
+                    </div>
+                    <div class="media-body">
+                      <h1><a href="blog-detail.html">Streat Crime</a></h1>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="bottom-categories wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.4s">
+                <div class="vid-heading">
+                  <span>Categories</span>
+                  <div class="hding-bottm-line"></div>
+                </div>
+                <ul class="category-list list-unstyled">
+                  <li><a href="category-listing.html">Action</a></li>
+                  <li><a href="category-listing.html">Adventure</a></li>
+                  <li><a href="category-listing.html">War</a></li>
+                  <li><a href="category-listing.html">Romance</a></li>
+                  <li><a href="category-listing.html">Comedy</a></li>
+                  <li><a href="category-listing.html">Horror</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="sendus wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.6s">
+                <div class="vid-heading">
+                  <span>Send Us a Message</span>
+                  <div class="hding-bottm-line"></div>
+                </div>
+                <div id="contact-form" *ngIf="!submitted">
+                  <div class="expMessage"></div>
+                  <form class="send-form" (ngSubmit)="submit()">
+                    <input type="text" name="formInput[name]" id="name" class="form-control half-wdth-field"
+                      placeholder="Name" [(ngModel)]="formData.name" required>
+                    <input type="email" name="formInput[email]" id="email"
+                      class="form-control half-wdth-field pull-right" placeholder="Email" [(ngModel)]="formData.email"
+                      required>
+                    <input type="number" name="formInput[phone]" id="phone"
+                      class="form-control half-wdth-field pull-right" placeholder="Contact Number"
+                      [(ngModel)]="formData.phone" required>
+                    <textarea name="formInput[message]" id="message" class="form-control" rows="3" placeholder="Message"
+                      [(ngModel)]="formData.message" required></textarea>
+                    <input type="hidden" name="action" value="submitform">
+                    <div>
+                      <button type="submit" value="submit" class="btn btn-send btn-blue">
+                        Submit
+                      </button>
+                    </div>
+                  </form>
+                </div>
+                <div *ngIf="submitted">
+                  <div class="contBg">
+                    <h6>Your response have been submitted. We will get in touch with you soon.</h6>
+                    <button class="btn btn-warning"
+                      (click)="submitted=false; formData = { name: null, email: null, phone: null, message: null };">
+                      Submit Another</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <!-- </div>
+
+    <div id="login-box">
+      <i class="fa fa-remove login-toggle v2-bg" (click)="closeLogin()"></i>
+      <div [hidden]="isLogin">
+        <form class="user-form login-form form-active text-center">
+          <h1 class="form-heading">Log in to your account</h1>
+
+          <button value="loginM" class="btn btn-block btn-login v2-bg text-uppercase" (click)="comingSoon()">
+            Login As Moderator
+          </button>
+          <button value="loginI" class="btn btn-block btn-login v2-bg text-uppercase" (click)="comingSoon()">
+            Login As Investor
+          </button>
+          <button value="login" class="btn btn-block btn-login v2-bg text-uppercase" (click)="enableLogin()">
+            Login As User
+          </button>
+
+        </form>
+      </div>
+      <div [hidden]="!isLogin"> -->
+      <!-- Login from -->
+      <!-- <form class="user-form login-form form-active text-center">
+          <h1 class="form-heading">Log in to your account</h1> -->
+      <!-- <a href="#" class="btn btn-login w-facebook"><i class="fa fa-facebook"></i>Facebook</a>
+        <a href="#" class="btn btn-login w-twitter"><i class="fa fa-twitter"></i>Twitter</a>
+        <p class="or-login">or</p> -->
+      <!-- <div class="form-group">
+            <input type="email" name="email" class="form-control" id="login-email" required [(ngModel)]="form.email"
+              placeholder="Email Address">
+            <i class="fa fa-envelope input-icon"></i>
+          </div>
+          <div class="form-group">
+            <input type="password" name="password" class="form-control" id="login-password" required
+              [(ngModel)]="form.password" placeholder="Password">
+            <i class="fa fa-key input-icon"></i>
+          </div>
+          <label for="rememberme">Remember Me</label>
+          <input type="checkbox" class="form-check-input" id="rememberme" name="rememberMe"
+            [(ngModel)]="form.rememberMe" />
+          <button type="submit" value="login" class="btn btn-block btn-login v2-bg text-uppercase" (click)="login()">
+            Login
+          </button>
+          <div [(ngClass)]="errorClasses" [innerHTML]="errorMessage" style="color:red;font-size: 11px;">
+          </div>
+          <p class="forgot-password">
+            Forgot your password? <a href="#">Click here</a>
+          </p>
+          <p class="no-account">
+            Don't have an account yet? <a id="signUp-frm-button" href="#" (click)="reset()">Sign Up</a>
+          </p>
+        </form>
+      </div> -->
+      <!-- SignUp form -->
+      <!-- <form class="user-form signUp-form text-center">
+        <h1 class="form-heading">Sign Up</h1>
+        <div class="form-group">
+          <input type="email" name="email" class="form-control" id="signUp-email" required
+            [(ngModel)]="signupForm.email" placeholder="Email Address">
+          <i class="fa fa-envelope input-icon"></i>
+        </div>
+        <div class="form-group">
+          <input type="password" name="password" class="form-control" id="signUp-password" required
+            [(ngModel)]="signupForm.password" placeholder="Password">
+          <i class="fa fa-key input-icon"></i>
+        </div>
+        <div class="form-group">
+          <input type="password" name="password" class="form-control" id="signUp-password" required
+            [(ngModel)]="signupForm.confirm_password" placeholder="Confirm Password">
+          <i class="fa fa-key input-icon"></i>
+        </div>
+        <div class="form-group">
+          <input type="text" name="referral" class="form-control" id="signUp-referral" [(ngModel)]="signupForm.referral"
+            placeholder="Referral Code">
+          <i class="fa fa-share input-icon"></i>
+        </div> -->
+
+      <!-- <recaptcha [(ngModel)]="recaptchaResult" (scriptLoad)="onScriptLoad()" (scriptError)="onScriptError()"
+          name="recaptcha"></recaptcha> -->
+      <!-- <button type="submit" value="login" class="btn btn-block btn-login v2-bg text-uppercase" (click)="signup()">
+          Sign Up
+        </button>
+        <div [(ngClass)]="errorClasses" [innerHTML]="errorMessage" style="color:red;font-size: 11px;">
+        </div>
+        <p class="no-account">
+          You have an account already? <a id="login-frm-button" href="#" (click)="reset()">Login</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</block-ui>
+<notifier-container></notifier-container> -->

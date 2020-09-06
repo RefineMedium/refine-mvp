@@ -1,0 +1,78 @@
+<div class="col-12 mainDiv pa3">
+  <div class="container-fluid">
+    <div class="row div-high">
+      <div class="col-md-6">
+        <h3 class="ml5 mt6 pt3 wow fadeInUp" data-wow-duration="0.5s">Welcome to Refine Medium</h3>
+        <p class="ml5 mt4 pr3 wow fadeInUp" data-wow-duration="0.5s">A Video Platform, enabling users to upload and
+          share video content. Join today to upload videos.</p>
+        <button *ngIf="!isLogin" class="ml5 mt5 btn btn-primary join-btn" (click)="loginToJoin()">Login to join</button>
+        <button *ngIf="isLogin" class="ml5 mt5 btn btn-primary join-btn" (click)="loginToJoin()">Let's Start</button>
+      </div>
+      <div class="col-md-6 img-div bg-1">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-12 mainDiv pa3 mt0">
+  <div class="container-fluid">
+    <div class="row div-high">
+      <div class="col-md-6 img-div bg-2 wow fadeInUp" data-wow-duration="1s">
+      </div>
+      <div class="col-md-6">
+        <h4 class="ml5 mt6 pt3 wow fadeInUp" data-wow-duration="1s">Great Entertainment</h4>
+        <p class="ml5 mt4 pr3 small-font wow fadeInUp" data-wow-duration="1s">Upload videos from our platform and
+          share them with your friends and family. If your video makes it to the popular list you will earn money in
+          your wallet.</p>
+        <button class="ml5 mt5 btn btn-primary join-btn" (click)="goToBrowse()">Get Started</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-12 mainDiv pa3 mt0">
+  <div class="container-fluid">
+    <div class="row div-high">
+      <div class="col-md-6">
+        <h3 class="ml5 mt6 pt3 wow fadeInUp" data-wow-duration="1s">Invite & Earn</h3>
+        <p class="ml5 mt4 pr3 wow fadeInUp" data-wow-duration="1s">Invite your friends, you will earn XRM tokens in
+          your wallet once your friend successfully signs up on our platform.</p>
+        <button class="ml5 mt5 btn btn-primary join-btn" (click)="inviteUserPopup()">Get Started</button>
+      </div>
+      <div class="col-md-6 img-div bg-3 wow fadeInUp" data-wow-duration="1s">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-12 mainDiv pa3 mt0">
+  <div class="container-fluid">
+    <div class="row div-high">
+      <div class="col-md-6 img-div bg-4 wow fadeInUp" data-wow-duration="1s">
+      </div>
+      <div class="col-md-6">
+        <h4 class="ml5 mt6 pt3 wow fadeInUp" data-wow-duration="1s">Earn from Videos</h4>
+        <p class="ml5 mt4 pr3 small-font wow fadeInUp" data-wow-duration="1s">Upload videos from our platform and
+          share them with your friends and family. If your video makes it to the popular list you will earn money in
+          your wallet.</p>
+        <button class="ml5 mt5 btn btn-primary join-btn" (click)="uploadVideos()">Get Started</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="overlay" *ngIf="showModal" (click)="closeModal()"></div>
+<div class="transfer-Modal pa4" *ngIf="showModal">
+  <h4 class="text-center">Invite User
+    <span class="pull-right">
+      <p class="pointer" (click)="closeModal()"><i class="fa fa-close"></i></p>
+    </span>
+  </h4>
+  <div class="pl3 pr3 input-group mb-3 w-100">
+    <input type="email" class="form-control mt3" placeholder="Email Address"
+      (keyup)="validateEmail($event.target.value)">
+    <small *ngIf="showErrMsg" class="text-danger">Required Field</small>
+  </div>
+  <button [disabled]="showErrMsg" class="mt4 btn btn-primary pull-right" (click)="inviteUser()">INVITE</button>
+</div>

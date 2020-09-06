@@ -1,0 +1,137 @@
+<div id="secondary-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+
+        <app-video [videosData]="recommendedVideos"></app-video>
+
+        <app-video [videosData]="topVideos"></app-video>
+
+        <app-video [videosData]="mostLikedVideos"></app-video>
+
+        <app-video [videosData]="latestVideos"></app-video>
+
+        <!-- <div class="latst-vid secondary-vid">
+          <div class="vid-heading overflow-hidden">
+            <span class="wow fadeInUp" data-wow-duration="0.8s">Recommended</span>
+            <div class="hding-bottm-line wow zoomIn" data-wow-duration="0.8s"></div>
+          </div>
+          <div class="row auto-clear">
+            <div class="vid-container">
+              <div class="col-md-3 col-sm-6 col-xs-12" *ngFor="let video of latestVideos">
+                <div class="latest-vid-img-container">
+                  <div class="vid-img">
+                    <img class="img-responsive" [src]="video.thumbnail" alt="video image">
+                    <a [routerLink]="['/watch']" [queryParams]="{video_id: video.slug}"
+                      class="play-icon play-small-icon">
+                      <img class="img-responsive play-svg svg" src="assets/images/play-button.svg" alt="play"
+                        onerror="this.src='assets/images/play-button.png'">
+                    </a>
+                    <div class="overlay-div"></div>
+                  </div>
+                  <div class="vid-text">
+                    <p><span>By </span> <a [routerLink]="['/search']"
+                        [queryParams]="{query: video.owner}">{{video.owner}}</a></p>
+                    <h1><a [routerLink]="['/watch']" [queryParams]="{video_id: video.slug}">{{video.Title}}</a></h1>
+                    <p class="vid-info-text">
+                      <span *ngIf="video.timestamp">{{video.timestamp | date :'short'}}</span>
+                      <span *ngIf="video.timestamp"> &#47; </span>
+
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+      </div>
+      <!-- <div class="col-md-3 col-sm-4">
+        <div class="sidebar">
+          <div class="overlaysection">
+            <div class="sidebar-vid most-liked">
+              <h1 class="sidebar-heading">Most Liked <br>(Coming Soon)</h1>
+              <div class="media">
+                <div class="media-left">
+                  <img src="assets/images/most-liked-img-s1.jpg" alt="video">
+                </div>
+                <div class="media-body">
+                  <h1><a (click)="comingSoon()">Journey</a></h1>
+                </div>
+              </div>
+              <div class="media">
+                <div class="media-left">
+                  <img src="assets/images/most-liked-img-s2.jpg" alt="video">
+                </div>
+                <div class="media-body">
+                  <h1><a (click)="comingSoon()">Magic</a></h1>
+
+                </div>
+              </div>
+              <div class="media">
+                <div class="media-left">
+                  <img src="assets/images/most-liked-img-s3.jpg" alt="video">
+                </div>
+                <div class="media-body">
+                  <h1><a (click)="comingSoon()">Runner</a></h1>
+
+                </div>
+              </div>
+              <div class="media">
+                <div class="media-left">
+                  <img src="assets/images/most-liked-img-s4.jpg" alt="video">
+                </div>
+                <div class="media-body">
+                  <h1><a (click)="comingSoon()">Fantasy</a></h1>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sidebar-vid most-viewd">
+            <h1 class="sidebar-heading">Most Viewed</h1>
+            <div class="most-viewd-container">
+              <div class="most-viewd-img">
+                <img class="img-responsive" src="assets/images/most-viewd-1.jpg" alt="video">
+              </div>
+              <div class="most-viewd-text">
+                <h1><a href="video-detail.html">Human Rights Violation</a></h1>
+                <p>
+                  <span><i class="fa fa-comment"></i> 10</span>
+                  <span><i class="fa fa-eye"></i> 534</span>
+                </p>
+              </div>
+            </div>
+            <div class="most-viewd-container">
+              <div class="most-viewd-img">
+                <img class="img-responsive" src="assets/images/most-viewd-2.jpg" alt="video">
+              </div>
+              <div class="most-viewd-text">
+                <h1><a href="video-detail.html">War Video Compilation</a></h1>
+                <p>
+                  <span><i class="fa fa-comment"></i> 10</span>
+                  <span><i class="fa fa-eye"></i> 534</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="tags">
+            <h1 class="sidebar-heading">Tags (Coming Soon)</h1>
+            <ul class="list-inline list-unstyled">
+              <li><a href="#">3D</a></li>
+              <li><a href="#">Animals &amp; Birds</a></li>
+              <li><a href="#">HD</a></li>
+              <li><a href="#">Horror</a></li>
+              <li><a href="#">Art</a></li>
+              <li><a href="#">Self</a></li>
+              <li><a href="#">HD Songs</a></li>
+              <li><a href="#">Comedy</a></li>
+            </ul>
+          </div>
+        </div>
+      </div> -->
+
+    </div>
+  </div>
+</div>
